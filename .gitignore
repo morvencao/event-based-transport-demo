@@ -23,3 +23,6 @@ go.work.sum
 
 # env file
 .env
+
+.kubeconfig
+event-based-transport-demo
