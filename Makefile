@@ -65,6 +65,6 @@ teardown:
 	./test/teardown.sh
 .PHONY: teardown
 
-run: teardown setup
-	./test/run.sh
-.PHONY: run
+run-source: build
+	./event-based-transport-demo source --transport-addr localhost:31883
+.PHONY: run-source

@@ -1,5 +1,14 @@
 # Event-Based Transport Demo
 
+![event-based-transport-demo.jpg](./event-based-transport-demo.jpg)
+
+## Prerequisites
+
+- [Docker](https://www.docker.com/)
+- [KinD (Kubernetes in Docker)](https://kind.sigs.k8s.io/)
+- [kubectl (Kubernetes command-line tool)](https://kubernetes.io/docs/reference/kubectl/)
+- [jq (JSON processor)](https://stedolan.github.io/jq/)
+
 ## Setup
 
 1. **Deploy Agent and Transport**
@@ -13,7 +22,7 @@ export KUBECONFIG=${PWD}/test/.kubeconfig
 
 2. **Run the Source**
 ```bash
-go run ./cmd/main.go source --transport-addr localhost:31883
+make run-source
 ```
 
 ## Resource Management
