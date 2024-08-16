@@ -11,5 +11,5 @@ if ! command -v kind >/dev/null 2>&1; then
     sudo mv ./kind-amd64 /usr/local/bin/kind
 fi
 
-kind delete cluster --name demo
+kind delete cluster --name edge
 rm -rf ${ROOT_DIR}/test/.kubeconfig

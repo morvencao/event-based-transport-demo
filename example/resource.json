@@ -1,5 +1,5 @@
 {
-    "clusterName": "cluster1",
+    "clusterName": "edge1",
     "spec": {
         "apiVersion": "apps/v1",
         "kind": "Deployment",

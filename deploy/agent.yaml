@@ -234,10 +234,10 @@ spec:
           - /event-based-transport-demo
           - agent
           - --v=5
-          - --cluster-name=cluster1
+          - --cluster-name=edge1
           - --workload-source-driver=mqtt
           - --workload-source-config=/secrets/mqtt/config.yaml
-          - --cloudevents-client-id=cluster1-work-agent
+          - --cloudevents-client-id=edge1-work-agent
         volumeMounts:
         - name: mqtt
           mountPath: /secrets/mqtt
@@ -255,8 +255,8 @@ stringData:
   config.yaml: |
     brokerHost: mosquitto.mqtt:1883
     topics:
-      sourceEvents: sources/source-demo/clusters/cluster1/sourceevents
-      agentEvents: sources/source-demo/clusters/cluster1/agentevents
+      sourceEvents: sources/source/clusters/edge1/sourceevents
+      agentEvents: sources/source/clusters/edge1/agentevents
 ---
 kind: ServiceAccount
 apiVersion: v1

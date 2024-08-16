@@ -13,7 +13,7 @@ if ! command -v kind >/dev/null 2>&1; then
     sudo mv ./kind-amd64 /usr/local/bin/kind
 fi
 
-cat << EOF | kind create cluster --name demo --kubeconfig ${ROOT_DIR}/test/.kubeconfig --config=-
+cat << EOF | kind create cluster --name edge --kubeconfig ${ROOT_DIR}/test/.kubeconfig --config=-
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -30,8 +30,8 @@ export image_repository=quay.io/morvencao/event-based-transport-demo
 export image_tag=latest
 make image
 
-kind load docker-image --name demo eclipse-mosquitto:2.0.18
-kind load docker-image --name demo ${image_repository}:$image_tag
+kind load docker-image --name edge eclipse-mosquitto:2.0.18
+kind load docker-image --name edge ${image_repository}:$image_tag
 
 kubectl create ns mqtt || true
 kubectl apply -f ${ROOT_DIR}/deploy/mqtt.yaml

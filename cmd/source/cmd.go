@@ -48,7 +48,7 @@ func newSourceOptions() *sourceOptions {
 
 func (o *sourceOptions) addSourceFlags(fs *pflag.FlagSet) {
 	fs.StringVar(&o.serverAddr, "server-addr", "localhost:8080", "Server address")
-	fs.StringVar(&o.sourceID, "source-id", "source-demo", "Source ID")
+	fs.StringVar(&o.sourceID, "source-id", "source", "Source ID")
 	fs.StringVar(&o.transportType, "transport-type", "mqtt", "Transport type")
 	fs.StringVar(&o.transportAddr, "transport-addr", "localhost:1883", "Transport address")
 }
